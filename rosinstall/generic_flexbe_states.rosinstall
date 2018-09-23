@@ -1,0 +1,4 @@
+- git:
+    local-name: generic_flexbe_states
+    uri: https://github.com/FlexBE/generic_flexbe_states.git
+    version: master

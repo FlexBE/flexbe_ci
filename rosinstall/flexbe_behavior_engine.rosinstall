@@ -1,0 +1,4 @@
+- git:
+    local-name: flexbe_behavior_engine
+    uri: https://github.com/team-vigir/flexbe_behavior_engine.git
+    version: feature/flexbe_app

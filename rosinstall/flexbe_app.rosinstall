@@ -1,0 +1,4 @@
+- git:
+    local-name: flexbe_app
+    uri: https://github.com/FlexBE/flexbe_app.git
+    version: feature/add_tests
