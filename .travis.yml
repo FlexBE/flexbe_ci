@@ -1,10 +1,18 @@
 sudo: required
-dist: xenial
 language: generic
+
+jobs:
+  include:
+  - dist: xenial
+    env: ROS_DISTRO=kinetic
+  - dist: bionic
+    env: ROS_DISTRO=melodic
+  - dist: focal
+    env: ROS_DISTRO=noetic
 
 before_install:
   - ln -s $PWD ~/flexbe_ci
-  - source ~/flexbe_ci/setup.bash
+  - source ~/flexbe_ci/setup.bash $ROS_DISTRO
   - ~/flexbe_ci/ci_scripts/before_install.bash
   
 install:
