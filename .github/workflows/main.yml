@@ -10,14 +10,23 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  melodic:
+  test:
     # The type of runner that the job will run on
-    runs-on: ubuntu-18.04
-    env:
-      ROS_DISTRO: melodic
-      PYTHON: python
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04]
+        include:
+          - os: ubuntu-16.04
+            ROS_DISTRO: kinetic
+          - os: ubuntu-18.04
+            ROS_DISTRO: melodic
+          - os: ubuntu-20.04
+            ROS_DISTRO: noetic
+            PYTHON: python3
+
     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps: &steps
+    steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Prepare CI
@@ -32,19 +41,3 @@ jobs:
         run: |
           ~/flexbe_ci/ci_scripts/before_script.bash
           ~/flexbe_ci/ci_scripts/script.bash
-
-  noetic:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-20.04
-    env:
-      ROS_DISTRO: noetic
-      PYTHON: python3
-    steps: *steps
-
-  kinetic:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-16.04
-    env:
-      ROS_DISTRO: kinetic
-      PYTHON: python
-    steps: *steps
