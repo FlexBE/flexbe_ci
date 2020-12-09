@@ -12,7 +12,7 @@ jobs:
   test:
     strategy:
       matrix:
-        os: [ubuntu-16.04, ubuntu-18.04, ubuntu-20.04]
+        ros: [kinetic, melodic, noetic]
         include:
           - os: ubuntu-16.04
             ros: kinetic
@@ -35,11 +35,16 @@ jobs:
         run: |
           ln -s $GITHUB_WORKSPACE ~/flexbe_ci
           source ~/flexbe_ci/setup.bash $ROS_DISTRO
-      - name: Install
-        run: |
-          ~/flexbe_ci/ci_scripts/before_install.bash
-          ~/flexbe_ci/ci_scripts/install.bash
-      - name: Build and Test
-        run: |
-          ~/flexbe_ci/ci_scripts/before_script.bash
-          ~/flexbe_ci/ci_scripts/script.bash
+
+      - name: Install ROS
+        run: ~/flexbe_ci/ci_scripts/install_ros.bash
+      - name: Setup Workspace
+        run: ~/flexbe_ci/ci_scripts/setup_workspace.bash
+      - name: Clone FlexBE Repos
+        run: ~/flexbe_ci/ci_scripts/run_rosinstall.bash
+      - name: Test Create Repo
+        run: ~/flexbe_ci/ci_scripts/test_create_repo.bash
+      - name: Test Devel Workspace
+        run: ~/flexbe_ci/ci_scripts/run_devel_tests.bash
+      - name: Test Install Workspace
+        run: ~/flexbe_ci/ci_scripts/run_install_tests.bash
