@@ -1,4 +1,4 @@
-# FlexBE CI [![Build Status](https://travis-ci.org/FlexBE/flexbe_ci.svg?branch=master)](https://travis-ci.org/FlexBE/flexbe_ci)
+# FlexBE CI ![Build Status](https://github.com/flexbe/flexbe_ci/workflows/FlexBE%20CI/badge.svg)
 
 Continuous integration for FlexBE.
 
