@@ -17,7 +17,7 @@ jobs:
       ROS_DISTRO: melodic
       PYTHON: python
     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
+    steps: &steps
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Prepare CI
@@ -32,3 +32,19 @@ jobs:
         run: |
           ~/flexbe_ci/ci_scripts/before_script.bash
           ~/flexbe_ci/ci_scripts/script.bash
+
+  noetic:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-20.04
+    env:
+      ROS_DISTRO: noetic
+      PYTHON: python3
+    steps: *steps
+
+  kinetic:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-16.04
+    env:
+      ROS_DISTRO: kinetic
+      PYTHON: python
+    steps: *steps
