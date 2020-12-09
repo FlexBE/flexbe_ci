@@ -8,7 +8,7 @@ jobs:
   - dist: bionic
     env: ROS_DISTRO=melodic
   - dist: focal
-    env: ROS_DISTRO=noetic
+    env: ROS_DISTRO=noetic PYTHON=python3
 
 before_install:
   - ln -s $PWD ~/flexbe_ci
