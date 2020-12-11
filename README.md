@@ -1,8 +1,8 @@
 # FlexBE CI ![Build Status](https://github.com/flexbe/flexbe_ci/workflows/FlexBE%20CI/badge.svg)
 
-Continuous integration for FlexBE.
+Continuous integration for FlexBE. Happy testing!
 
-## Usage
+## Travis Usage
 
 Copy the file `.travis.yml` into the root folder of your repo.
 
@@ -18,4 +18,18 @@ by
       - git clone https://github.com/FlexBE/flexbe_ci.git ~/flexbe_ci
       - source ~/flexbe_ci/setup.bash
 
-Happy testing!
+## Github Actions Usage
+
+Copy the file `.github/workflows/main.yml` into the `.github/workflows` folder of your repo and name it, e.g., `flexbe_ci.yml`.
+
+Substitute
+
+    run: |
+      ln -s $GITHUB_WORKSPACE ~/flexbe_ci
+      source ~/flexbe_ci/setup.bash $ROS_DISTRO
+
+by
+
+    run: |
+      git clone https://github.com/FlexBE/flexbe_ci.git ~/flexbe_ci
+      source ~/flexbe_ci/setup.bash $ROS_DISTRO
