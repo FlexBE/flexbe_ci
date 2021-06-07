@@ -12,4 +12,4 @@ sudo apt install -y xvfb  # `xvfb-run` is used in scrpt.bash
 sudo apt-get install -y ros-$ROS_DISTRO-ros-base
 sudo apt-get install -y $PYTHON-rosinstall $PYTHON-rosinstall-generator $PYTHON-wstool build-essential $PYTHON-catkin-pkg $PYTHON-rosdep ros-$ROS_DISTRO-catkin $PYTHON-catkin-tools $PYTHON-osrf-pycommon
 sudo rosdep init
-rosdep update
+rosdep update --rosdistro=${ROS_DISTRO}

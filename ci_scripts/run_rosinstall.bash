@@ -17,5 +17,5 @@ for rosinstall in ~/flexbe_ci/rosinstall/*.rosinstall; do
 done
 wstool up
 cd ~/catkin_ws
-rosdep install -y --from-paths src --ignore-src
+rosdep install -y --from-paths src --ignore-src --rosdistro=${ROS_DISTRO}
 catkin build
