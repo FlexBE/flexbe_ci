@@ -3,8 +3,6 @@ language: generic
 
 jobs:
   include:
-  - dist: xenial
-    env: ROS_DISTRO=kinetic
   - dist: bionic
     env: ROS_DISTRO=melodic
   - dist: focal
@@ -14,12 +12,12 @@ before_install:
   - ln -s $PWD ~/flexbe_ci
   - source ~/flexbe_ci/setup.bash $ROS_DISTRO
   - ~/flexbe_ci/ci_scripts/before_install.bash
-  
+
 install:
   - ~/flexbe_ci/ci_scripts/install.bash
-  
+
 before_script:
   - ~/flexbe_ci/ci_scripts/before_script.bash
-  
+
 script:
   - ~/flexbe_ci/ci_scripts/script.bash
