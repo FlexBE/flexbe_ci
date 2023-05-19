@@ -3,8 +3,6 @@ language: generic
 
 jobs:
   include:
-  - dist: bionic
-    env: ROS_DISTRO=melodic
   - dist: focal
     env: ROS_DISTRO=noetic PYTHON=python3
 
