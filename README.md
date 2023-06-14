@@ -2,7 +2,7 @@
 
 Continuous integration for FlexBE. Happy testing!
 
-## Travis Usage [![Build Status](https://travis-ci.org/FlexBE/flexbe_ci.svg?branch=master)](https://travis-ci.org/FlexBE/flexbe_ci)
+## Travis Usage [![Build Status](https://travis-ci.org/FlexBE/flexbe_ci.svg?branch=ros2-devel)](https://travis-ci.org/FlexBE/flexbe_ci)
 
 Copy the file `.travis.yml` into the root folder of your repo.
 
@@ -15,7 +15,7 @@ Substitute
 by
 
     before_install:
-      - git clone https://github.com/FlexBE/flexbe_ci.git ~/flexbe_ci
+      - git clone -b $BRANCH_NAME https://github.com/FlexBE/flexbe_ci.git ~/flexbe_ci
       - source ~/flexbe_ci/setup.bash
 
 ## Github Actions Usage ![Build Status](https://github.com/flexbe/flexbe_ci/workflows/FlexBE%20CI/badge.svg)
@@ -31,5 +31,5 @@ Substitute
 by
 
     run: |
-      git clone https://github.com/FlexBE/flexbe_ci.git ~/flexbe_ci
+      git clone -b $BRANCH_NAME https://github.com/FlexBE/flexbe_ci.git ~/flexbe_ci
       source ~/flexbe_ci/setup.bash $ROS_DISTRO

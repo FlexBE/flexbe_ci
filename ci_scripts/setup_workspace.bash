@@ -7,3 +7,4 @@ source /opt/ros/$ROS_DISTRO/setup.bash
 mkdir -p ~/colcon_ws/src
 cd ~/colcon_ws
 colcon build
+source ~/colcon_ws/install/setup.bash

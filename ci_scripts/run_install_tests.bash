@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-source ~/colcon_ws/devel/setup.bash
+source ~/colcon_ws/install/setup.bash
 cd ~/colcon_ws
 rm -rf install build log
 colcon build
