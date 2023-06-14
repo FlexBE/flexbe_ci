@@ -3,7 +3,7 @@ language: generic
 
 jobs:
   include:
-  - dist: jammy
+  - dist: jessie
     env: ROS_DISTRO=humble PYTHON=python3
 
 before_install:
