@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 set -e
 
-source ~/colcon_ws/install/setup.bash
+source /opt/ros/$ROS_DISTRO/setup.bash
 
 # build packages
 cd ~/colcon_ws
-catkin build
+colcon build
 source ~/colcon_ws/install/setup.bash
 
 # TEST create repo

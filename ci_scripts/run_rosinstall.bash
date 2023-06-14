@@ -18,4 +18,7 @@ done
 wstool up
 cd ~/colcon_ws
 rosdep install -y --from-paths src --ignore-src --rosdistro=${ROS_DISTRO}
+
+source /opt/ros/$ROS_DISTRO/setup.bash
 colcon build
+source ~/colcon_ws/install/setup.bash
