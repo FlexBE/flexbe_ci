@@ -4,7 +4,6 @@ set -e
 source /opt/ros/$ROS_DISTRO/setup.bash
 
 # setup workspace
-mkdir -p ~/catkin_ws/src
-cd ~/catkin_ws
-catkin init
-catkin build
+mkdir -p ~/colcon_ws/src
+cd ~/colcon_ws
+colcon build

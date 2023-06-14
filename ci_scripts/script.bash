@@ -1,29 +1,22 @@
 #!/usr/bin/env bash
 set -e
 
-source ~/catkin_ws/devel/setup.bash
+source ~/colcon_ws/install/setup.bash
 
 # build packages
-cd ~/catkin_ws
+cd ~/colcon_ws
 catkin build
-source ~/catkin_ws/devel/setup.bash
+source ~/colcon_ws/install/setup.bash
 
 # TEST create repo
-cd ~/catkin_ws/src
+cd ~/colcon_ws/src
 rosrun flexbe_widget create_repo test
 
 # TEST run ros tests
-cd ~/catkin_ws
-catkin build
-source ~/catkin_ws/devel/setup.bash
+cd ~/colcon_ws
+rm -rf install build log
+colcon build
+source ~/colcon_ws/install/setup.bash
 xvfb-run rosrun flexbe_app run_app --offline --run-tests
-catkin run_tests && catkin_test_results
-
-# install packages
-cd ~/catkin_ws
-catkin clean --yes
-catkin config --install
-catkin build
-source ~/catkin_ws/install/setup.bash
-xvfb-run rosrun flexbe_app run_app --offline --run-tests
-catkin run_tests && catkin_test_results
+colcon test
+colcon test-result --all

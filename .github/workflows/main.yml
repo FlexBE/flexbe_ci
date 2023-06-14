@@ -12,10 +12,16 @@ jobs:
   test:
     strategy:
       matrix:
-        ros: [noetic]
+        ros: [humble, iron, rolling]
         include:
-          - os: ubuntu-20.04
-            ros: noetic
+          - os: ubuntu-22.04
+            ros: humble
+            python: python3
+          - os: ubuntu-22.04
+            ros: iron
+            python: python3
+          - os: ubuntu-22.04
+            ros: rolling
             python: python3
 
     runs-on: ${{ matrix.os }}

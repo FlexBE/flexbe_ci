@@ -3,8 +3,8 @@ language: generic
 
 jobs:
   include:
-  - dist: focal
-    env: ROS_DISTRO=noetic PYTHON=python3
+  - dist: jammy
+    env: ROS_DISTRO=humble PYTHON=python3
 
 before_install:
   - ln -s $PWD ~/flexbe_ci
