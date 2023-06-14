@@ -8,5 +8,5 @@ colcon build
 source ~/colcon_ws/install/setup.bash
 ros2 run flexbe_app nwjs_install
 xvfb-run ros2 run flexbe_app run_app --offline --run-tests
-colcon test run_tests
+colcon test --ctest-args tests
 colcon test-result --all
