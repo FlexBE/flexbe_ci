@@ -11,6 +11,6 @@ sudo apt update
 sudo apt install -y dpkg # fix https://github.com/travis-ci/travis-ci/issues/10132
 sudo apt install -y xvfb  # `xvfb-run` is used in scrpt.bash
 sudo apt install -y ros-$ROS_DISTRO-ros-base
-sudo apt install -y $PYTHON-rosinstall $PYTHON-rosinstall-generator $PYTHON-wstool ros-dev-tools $PYTHON-catkin-pkg $PYTHON-rosdep ros-$ROS_DISTRO-catkin $PYTHON-catkin-tools $PYTHON-osrf-pycommon
+sudo apt install -y $PYTHON-rosinstall $PYTHON-rosinstall-generator $PYTHON-wstool ros-dev-tools $PYTHON-catkin-pkg $PYTHON-rosdep $PYTHON-osrf-pycommon
 sudo rosdep init
 rosdep update --rosdistro=${ROS_DISTRO}
