@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
+echo "Verifying regular install build ..."
 source /opt/ros/$ROS_DISTRO/setup.bash
 cd ~/colcon_ws
 rm -rf install build log

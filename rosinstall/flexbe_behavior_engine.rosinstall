@@ -1,4 +1,4 @@
 - git:
     local-name: flexbe_behavior_engine
     uri: https://github.com/FlexBE/flexbe_behavior_engine.git
-    version: ros2-devel
+    version: ros2-pre-release
