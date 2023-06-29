@@ -4,7 +4,7 @@ Continuous integration for FlexBE. Happy testing!
 
 ## Github Actions Usage !
 
-[Build Status](https://github.com/FlexBE/flexbe_ci/workflows/FlexBE%20CI/badge.svg?branch=humble)
+![Build Status](https://github.com/FlexBE/flexbe_ci/workflows/FlexBE%20CI/badge.svg?branch=humble)
 
 Copy the file `.github/workflows/main.yml` into the `.github/workflows` folder of your repo and name it, e.g., `flexbe_ci.yml`.
 
