@@ -10,7 +10,7 @@ source ~/colcon_ws/install/setup.bash
 
 # TEST create repo
 cd ~/colcon_ws/src
-ros2 run flexbe_widget create_repo test
+ros2 run flexbe_widget create_repo test --non-interactive
 
 # TEST run ros tests
 cd ~/colcon_ws
