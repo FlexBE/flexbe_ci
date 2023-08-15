@@ -3,7 +3,8 @@
 
 ## Github Actions Usage !
 
-![Build Status](https://github.com/FlexBE/flexbe_ci/workflows/FlexBE%20CI/badge.svg?branch=rolling)
+![FlexBE CI](https://github.com/FlexBE/flexbe_ci/workflows/FlexBE%20CI/badge.svg?branch=rolling-pre-release)
+![Build Status](https://github.com/FlexBE/flexbe_behavior_engine/workflows/FlexBE%20CI/badge.svg?branch=rolling-pre-release)
 
 Copy the file `.github/workflows/main.yml` into the `.github/workflows` folder of your repo and name it, e.g., `flexbe_ci.yml`.
 
