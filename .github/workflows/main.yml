@@ -15,7 +15,7 @@ jobs:
         ros: [jazzy]
         include:
           - os: ubuntu-24.04
-            ros: jazzy
+            ros: rolling
             python: python3
 
     runs-on: ${{ matrix.os }}
