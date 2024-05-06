@@ -12,9 +12,9 @@ jobs:
   test:
     strategy:
       matrix:
-        ros: [jazzy]
+        ros: [rolling]
         include:
-          - os: ubuntu-24.04
+          - os: ubuntu-latest
             ros: rolling
             python: python3
 
