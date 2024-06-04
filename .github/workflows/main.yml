@@ -12,10 +12,10 @@ jobs:
   test:
     strategy:
       matrix:
-        ros: [iron]
+        ros: [jazzy]
         include:
-          - os: ubuntu-22.04
-            ros: iron
+          - os: ubuntu-24.04
+            ros: jazzy
             python: python3
 
     runs-on: ${{ matrix.os }}
