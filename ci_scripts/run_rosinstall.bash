@@ -2,8 +2,7 @@
 set -e
 
 # clone required packages
-cd ~/colcon_ws/src
-wstool init
+cd ~/colcon_ws
 for rosinstall in ~/flexbe_ci/rosinstall/*.rosinstall; do
     REPO_INFO=(${GITHUB_REPOSITORY//\// })
     REPO_NAME=${REPO_INFO[1]}
@@ -12,11 +11,10 @@ for rosinstall in ~/flexbe_ci/rosinstall/*.rosinstall; do
         ln -s $GITHUB_WORKSPACE ~/colcon_ws/src/$REPO_NAME
     else
         echo "[REPO:$rosinstall] Cloning via rosinstall"
-        wstool merge $rosinstall
+        vcs import src < $rosinstall --workers=1
     fi
 done
-wstool up
-cd ~/colcon_ws
+vcs pull src
 rosdep install -y --from-paths src --ignore-src --rosdistro=${ROS_DISTRO}
 
 source /opt/ros/$ROS_DISTRO/setup.bash
