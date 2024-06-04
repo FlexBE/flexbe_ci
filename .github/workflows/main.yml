@@ -14,9 +14,6 @@ jobs:
       matrix:
         ros: [iron] #, rolling]
         include:
-          # - os: ubuntu-22.04
-          #   ros: humble
-          #   python: python3
           - os: ubuntu-22.04
             ros: iron
             python: python3

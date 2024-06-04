@@ -4,7 +4,7 @@ language: generic
 jobs:
   include:
   - dist: jessie
-    env: ROS_DISTRO=humble PYTHON=python3
+    env: ROS_DISTRO=iron PYTHON=python3
 
 before_install:
   - ln -s $PWD ~/flexbe_ci
