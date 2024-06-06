@@ -12,10 +12,10 @@ jobs:
   test:
     strategy:
       matrix:
-        ros: [jazzy]
+        ros: [rolling]
         include:
           - os: ubuntu-24.04
-            ros: jazzy
+            ros: rolling
             python: python3
 
     runs-on: ${{ matrix.os }}
@@ -26,7 +26,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Prepare CI
         run: |
           ln -s $GITHUB_WORKSPACE ~/flexbe_ci
