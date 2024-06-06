@@ -14,7 +14,7 @@ jobs:
       matrix:
         ros: [rolling]
         include:
-          - os: ubuntu-latest
+          - os: ubuntu-24.04
             ros: rolling
             python: python3
 
