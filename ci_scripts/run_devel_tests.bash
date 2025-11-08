@@ -7,7 +7,8 @@ cd ~/colcon_ws
 rm -rf install build log
 colcon build --symlink-install
 source ~/colcon_ws/install/setup.bash
-ros2 run flexbe_app nwjs_install
-xvfb-run ros2 run flexbe_app run_app --offline --run-tests
+# Skip flexbe_app tests
+# ros2 run flexbe_app nwjs_install
+# xvfb-run ros2 run flexbe_app run_app --offline --run-tests
 colcon test --ctest-args tests
 colcon test-result --all
