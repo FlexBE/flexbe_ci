@@ -40,7 +40,6 @@ jobs:
         run: |
           ln -sfn $GITHUB_WORKSPACE ~/flexbe_ci
           source ~/flexbe_ci/setup.bash $ROS_DISTRO
-
       - name: Install ROS
         run: ~/flexbe_ci/ci_scripts/install_ros.bash
       - name: Setup Workspace
