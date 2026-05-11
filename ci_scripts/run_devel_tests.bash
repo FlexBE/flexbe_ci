@@ -14,7 +14,9 @@ source ~/colcon_ws/install/setup.bash
 # xvfb-run ros2 run flexbe_app run_app --offline --run-tests
 
 echo "Run colcon tests ..."
-colcon test --ctest-args tests --verbose
+colcon test # \
+#    --event-handlers console_direct+ \
+#    --ctest-args --output-on-failure
 
 echo "Report results ..."
-colcon test-result --all
+colcon test-result --verbose --all

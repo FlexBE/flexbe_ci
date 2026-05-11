@@ -2,8 +2,9 @@
 name: FlexBE CI
 # Controls when the action will run.
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
+  # Triggers the workflow on push or pull request events
   push:
+  pull_request:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -11,6 +12,7 @@ on:
 jobs:
   test:
     strategy:
+      fail-fast: false # Run other tests to completion
       matrix:
         ros: [jazzy, kilted, rolling]
         include:
@@ -28,6 +30,7 @@ jobs:
     env:
       ROS_DISTRO: ${{ matrix.ros }}
       PYTHON: ${{ matrix.python }}
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -35,7 +38,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Prepare CI
         run: |
-          ln -s $GITHUB_WORKSPACE ~/flexbe_ci
+          ln -sfn $GITHUB_WORKSPACE ~/flexbe_ci
           source ~/flexbe_ci/setup.bash $ROS_DISTRO
 
       - name: Install ROS

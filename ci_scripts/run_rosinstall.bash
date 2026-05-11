@@ -14,9 +14,7 @@ for rosinstall in ~/flexbe_ci/rosinstall/*.rosinstall; do
         vcs import src < $rosinstall --workers=1
     fi
 done
-vcs pull src
-rosdep install -y --from-paths src --ignore-src --rosdistro=${ROS_DISTRO}
-
 source /opt/ros/$ROS_DISTRO/setup.bash
+rosdep install -y --from-paths src --ignore-src --rosdistro=${ROS_DISTRO}
 colcon build
 source ~/colcon_ws/install/setup.bash
