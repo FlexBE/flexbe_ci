@@ -13,6 +13,7 @@ source ~/colcon_ws/install/setup.bash
 # ros2 run flexbe_app nwjs_install
 # xvfb-run ros2 run flexbe_app run_app --offline --run-tests
 
+set +e
 echo "Run colcon tests ..."
 colcon test # \
 #    --event-handlers console_direct+ \
@@ -20,3 +21,11 @@ colcon test # \
 
 echo "Report results ..."
 colcon test-result --verbose --all
+TEST_RESULT=$?
+set -e
+
+if [ $TEST_RESULT -ne 0 ]; then
+    echo "Show failed package logs ..."
+    find log/latest_test \( -name "*.log" -o -name "*.txt" \) | xargs grep -iE "FAILED|ERROR:" || true
+fi
+exit $TEST_RESULT
